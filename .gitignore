@@ -1,0 +1,63 @@
+# Gradle files
+.gradle/
+build/
+
+# Forge MDK
+run/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse files
+bin/
+.metadata
+.classpath
+.project
+.settings/
+
+# NetBeans files
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Generated resources
+src/generated/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs
+hs_err_pid*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
