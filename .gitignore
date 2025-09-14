@@ -27,10 +27,14 @@
 *.ico binary
 *.svg text
 
+
 # --- Optional: improve GitHub linguist stats (treat envs as config) ---
 envs/** linguist-vendored
 scripts/** linguist-vendored
 .github/** linguist-vendored
+
+# Ignore environment files
+.env
 
 # generated assets
 assets/blender/build/
