@@ -36,3 +36,6 @@ scripts/** linguist-vendored
 assets/blender/build/
 packs/resource_packs/lob_base/models/*.glb
 
+# This ignores all backup files from the joe edditor and others
+**/*~
+**/*.*~
