@@ -26,13 +26,13 @@ This repo defines **Dev**, **Test**, and **Prod** environments, their Docker Com
 * **Dev**
 
   * Runs with creative mode for testing features.
-  * Port: `19134`
+  * Port: `19112`
   * Container: `bedrock-dev`
 
 * **Test**
 
   * Mirrors Prod settings for pre-production validation.
-  * Port: `19133`
+  * Port: `19122`
   * Container: `bedrock-test`
 
 * **Prod**
@@ -70,9 +70,9 @@ This repo defines **Dev**, **Test**, and **Prod** environments, their Docker Com
 
 5. **Connect to servers**
 
-   * **Prod:** `<host-ip>:19132`
-   * **Test:** `<host-ip>:19133`
-   * **Dev:** `<host-ip>:19134`
+  * **Prod:** `<host-ip>:19132`
+  * **Test:** `<host-ip>:19122`
+  * **Dev:** `<host-ip>:19112`
 
 ---
 
