@@ -1,0 +1,34 @@
+# --- Line endings: keep text files LF on Linux ---
+* text=auto eol=lf
+
+# --- Treat Bedrock world data as binary (no diffs, faster) ---
+**/data/worlds/** -diff -merge binary
+**/data/backups/** -diff -merge binary
+*.mcworld -diff -merge binary
+*.mcpack  -diff -merge binary
+*.zip     -diff -merge binary
+*.tar.gz  -diff -merge binary
+
+# --- JSON: keep as text but with JSON-aware diffs (if available) ---
+# Git itself doesn't have json driver by default; this still marks as text.
+*.json text diff
+
+# --- Docker/CI files as text ---
+*.yml  text
+*.yaml text
+*.sh   text
+
+# --- Keep binary for images/assets ---
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.svg text
+
+# --- Optional: improve GitHub linguist stats (treat envs as config) ---
+envs/** linguist-vendored
+scripts/** linguist-vendored
+.github/** linguist-vendored
+

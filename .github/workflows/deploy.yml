@@ -1,0 +1,9 @@
+- name: Rsync env to server
+  uses: burnett01/rsync-deployments@v7.0.1
+  with:
+    switches: -avz --delete --exclude 'data/worlds*' --exclude 'data/backups*'
+    path: ${{ matrix.env.path }}/
+    remote_path: ${{ matrix.env.remote }}/
+    remote_host: ${{ secrets.SSH_HOST }}
+    remote_user: ${{ secrets.SSH_USER }}
+    remote_key: ${{ secrets.SSH_KEY }}
