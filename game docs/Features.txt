@@ -1,0 +1,2 @@
+List of features that need soultions yet:
+    Custome flag images.
