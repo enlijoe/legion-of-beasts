@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ENV="${1:-}"
+DIR="/opt/minecraft/$ENV"
+COMPOSE_FILE="$DIR/docker-compose.yml"
+
+
+# Pick compose v2 if available, otherwise fall back to v1
+if docker compose version >/dev/null 2>&1; then
+  DC="docker compose"
+else
+  DC="docker-compose"
+fi
+
+usage() {
+  echo "Usage: minecraft {dev|test|prod} {up|down|restart|logs|status}"
+  exit 1
+}
+
+
+ACTION="${2:-}"
+[[ -z "$ACTION" ]] && usage
+
+case "$ACTION" in
+  up|start)
+    sudo $DC -f "$COMPOSE_FILE" up -d
+    ;;
+  down|stop)
+    sudo $DC -f "$COMPOSE_FILE" down
+    ;;
+  restart)
+    sudo $DC -f "$COMPOSE_FILE" restart
+    ;;
+  logs)
+    sudo $DC -f "$COMPOSE_FILE" logs -f
+    ;;
+  status)
+    sudo docker ps --filter "name=minecraft-$ENV"
+    ;;
+  *)
+    usage
+    ;;
+esac
